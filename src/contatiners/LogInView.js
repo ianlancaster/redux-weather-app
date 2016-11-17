@@ -11,8 +11,8 @@ class LogInView extends Component {
   render () {
     return (
       <div>
-        <FormInput />
-        <Button />
+        {/* <FormInput /> */}
+        <Button text='on the page!' />
       </div>
     )
   }

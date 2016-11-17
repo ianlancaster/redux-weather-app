@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 // link to combined reducer
-// link to main application container
+import App from './contatiners/App'
 
 const middleware = [ thunk ]
 
@@ -15,7 +15,7 @@ const store = createStore(
 
 render(
   <Provider store={store}>
-    {/* <App /> */}
+    <App logInView={true} oneDayView={false} sevenDayView={false} />
   </Provider>,
   document.getElementById('root')
 )

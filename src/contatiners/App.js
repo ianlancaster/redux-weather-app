@@ -9,7 +9,7 @@ class App extends Component {
     logInView: PropTypes.bool.isRequired,
     oneDayView: PropTypes.bool.isRequired,
     sevenDayView: PropTypes.bool.isRequired,
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func
   }
 
   render () {
