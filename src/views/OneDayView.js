@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import Button from '../components/Button'
 import { resetLocation } from '../actions/index'
 
-console.log(resetLocation)
-
 class OneDayView extends Component {
   static propTypes = {
     resetLocation: PropTypes.func.isRequired
@@ -12,7 +10,6 @@ class OneDayView extends Component {
 
   render () {
     const { resetLocation } = this.props
-    console.log(resetLocation)
 
     return (
       <div>
