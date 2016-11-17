@@ -14,13 +14,13 @@ export const requestWeather = () => ({
 })
 
 export const receiveWeather = (zipCode, json) => {
-  console.log(json)
   return {
     type: 'RECEIVE_WEATHER',
     zipCode,
     json: json,
-    data: json.forecast,
-    posts: json.forecast.simpleforecast.forecastday.map(day => day.high),
+    forecast: json.forecast,
+    todaysForecast: json.forecast.txt_forecast.forecastday[0].fcttext,
+    highs: json.forecast.simpleforecast.forecastday.map(day => day.high),
     receivedAt: Date.now()
   }
 }

@@ -22,6 +22,14 @@ const app = (state = initialState, action) => {
         oneDayView: false,
         sevenDayView: true
       }
+
+    case 'RECEIVE_WEATHER':
+      return {
+        ...state,
+        todaysForecast: [action.todaysForecast],
+        zipCode: [action.zipCode]
+      }
+
     default:
       return state
   }

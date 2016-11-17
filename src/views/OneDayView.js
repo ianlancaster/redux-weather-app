@@ -1,19 +1,23 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Button from '../components/Button'
-import { resetLocation } from '../actions/index'
+import { resetLocation, fetchWeather } from '../actions/index'
 
 class OneDayView extends Component {
   static propTypes = {
-    resetLocation: PropTypes.func.isRequired
+    resetLocation: PropTypes.func.isRequired,
+    fetchWeather: PropTypes.func,
+    todaysForecast: PropTypes.array,
+    zipCode: PropTypes.array
   }
 
   render () {
-    const { resetLocation } = this.props
+    const { resetLocation, todaysForecast } = this.props
 
     return (
       <div>
         <h3>{Date.now()}</h3>
+        {todaysForecast && (<h3>{todaysForecast[0]}</h3>)}
         <Button onClick={resetLocation} text='New Location' />
       </div>
     )
@@ -21,13 +25,16 @@ class OneDayView extends Component {
 }
 
 const mapStateToProps = (state) => {
+  const { todaysForecast, zipCode } = state.app
   return {
-
+    todaysForecast,
+    zipCode
   }
 }
 
 const mapDispatchToProps = {
-  resetLocation
+  resetLocation,
+  fetchWeather
 }
 
-export default connect(null, mapDispatchToProps)(OneDayView)
+export default connect(mapStateToProps, mapDispatchToProps)(OneDayView)
