@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import FormInput from '../components/FormInput.js'
+import Button from '../components/Button.js'
 
 class LogInView extends Component {
   static propTypes = {
@@ -8,7 +10,10 @@ class LogInView extends Component {
 
   render () {
     return (
-      <div />
+      <div>
+        <FormInput />
+        <Button />
+      </div>
     )
   }
 }
