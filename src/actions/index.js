@@ -20,7 +20,6 @@ export const receiveWeather = (zipCode, json) => {
     zipCode,
     json: json,
     data: json.forecast,
-    // posts: json.forecast.simpleForecast.forecastDay,
     posts: json.forecast.simpleforecast.forecastday.map(day => day.high),
     receivedAt: Date.now()
   }
@@ -29,7 +28,7 @@ export const receiveWeather = (zipCode, json) => {
 export const fetchWeather = (zipCode) => {
   return dispatch => {
     dispatch(requestWeather())
-    return fetch('http://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/q/80220.json')
+    return fetch(`http://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/q/${zipCode}.json`)
       .then(response => response.json())
       .then(json =>
 
