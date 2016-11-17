@@ -6,17 +6,17 @@ const initialState = {
 
 const app = (state = initialState, action) => {
   switch (action.type) {
-    case 'ACTIVATE_LOGINVIEW':
+    case 'RESET_LOCATION':
       return initialState
 
-    case 'ACTIVATE_ONEDAYVIEW':
+    case 'SET_LOCATION':
       return {
         logInView: false,
         oneDayView: true,
         sevenDayView: false
       }
 
-    case 'SET_LOCATION':
+    case 'ACTIVATE_SEVENDAYVIEW':
       return {
         logInView: false,
         oneDayView: false,

@@ -3,8 +3,6 @@ import React, { PropTypes } from 'react'
 let SetLocation = ({ setLocation }) => {
   let input
 
-  console.log(setLocation)
-
   return (
     <div>
       <form
