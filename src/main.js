@@ -19,3 +19,5 @@ render(
   </Provider>,
   document.getElementById('root')
 )
+
+// working backward it looks like I need the reducers and main app
