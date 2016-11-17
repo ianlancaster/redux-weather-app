@@ -2,17 +2,19 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import FormInput from '../components/FormInput.js'
 import Button from '../components/Button.js'
+import SetLocation from '../contatiners/SetLocation'
 
 class LogInView extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired
+
   }
 
   render () {
     return (
       <div>
-        {/* <FormInput /> */}
-        <Button text='on the page!' />
+        <h1>Welcome to Wundrly</h1>
+        <h3>Where would you like to check the weather forecast?</h3>
+        <SetLocation />
       </div>
     )
   }

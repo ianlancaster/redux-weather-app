@@ -1,40 +1,19 @@
-import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import LogInView from './LogInView.js'
-import OneDayView from './OneDayView.js'
-import SevenDayView from './SevenDayView.js'
-
-class App extends Component {
-  static propTypes = {
-    logInView: PropTypes.bool.isRequired,
-    oneDayView: PropTypes.bool.isRequired,
-    sevenDayView: PropTypes.bool.isRequired,
-    dispatch: PropTypes.func
-  }
-
-  render () {
-    const { logInView, oneDayView, sevenDayView } = this.props
-
-    return (
-      <div>
-        {logInView && (<LogInView />)}
-        {oneDayView && (<OneDayView />)}
-        {sevenDayView && (<SevenDayView />)}
-      </div>
-    )
-  }
-}
+import AppComponent from '../components/App'
 
 const mapStateToProps = (state) => {
+  const { logInView, oneDayView, sevenDayView } = state.app
   return {
-
+    logInView,
+    oneDayView,
+    sevenDayView
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
+const mapDispatchToProps = ({
 
-  }
-}
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent)
+
+export default App
