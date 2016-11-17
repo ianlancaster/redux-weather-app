@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 class SevenDayView extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired
+
   }
 
   render () {

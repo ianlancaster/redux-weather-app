@@ -16,7 +16,7 @@ const app = (state = initialState, action) => {
         sevenDayView: false
       }
 
-    case 'ACTIVATE_SEVENDAYVIEW':
+    case 'SET_LOCATION':
       return {
         logInView: false,
         oneDayView: false,
