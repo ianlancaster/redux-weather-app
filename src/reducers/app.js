@@ -26,7 +26,7 @@ const app = (state = initialState, action) => {
     case 'RECEIVE_WEATHER':
       return {
         ...state,
-        todaysForecast: [action.todaysForecast],
+        forecasts: [action.forecasts],
         zipCode: [action.zipCode]
       }
 

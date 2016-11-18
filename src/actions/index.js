@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch'
+import { dropRight, foreIn, zip, flatten } from 'lodash'
 
 export const setLocation = zipCode => ({
   type: 'SET_LOCATION',
@@ -16,13 +17,37 @@ export const requestWeather = () => ({
 export const receiveWeather = (zipCode, json) => {
   return {
     type: 'RECEIVE_WEATHER',
-    zipCode,
-    json: json,
-    forecast: json.forecast,
-    todaysForecast: json.forecast.txt_forecast.forecastday[0].fcttext,
-    highs: json.forecast.simpleforecast.forecastday.map(day => day.high),
-    receivedAt: Date.now()
+    forecasts: structureForecasts(json),
+    zipCode
   }
+}
+
+const structureForecasts = (json) => {
+  let simpleforecasts = dropRight(json.forecast.simpleforecast.forecastday, 3)
+  simpleforecasts = simpleforecasts.map((f) => {
+    return {
+      conditions: f.conditions,
+      dayText: `${f.date.weekday} ${f.date.monthname} ${f.date.day}`,
+      humidity: f.avehumidity,
+      wind: f.avewind.mph,
+      high: f.high.fahrenheit,
+      low: f.low.fahrenheit,
+      icon: f.icon_url,
+      percipitation: f.pop
+    }
+  })
+
+  let rawTxtForecasts = dropRight(json.forecast.txt_forecast.forecastday, 6)
+  let fullForecasts = []
+  for (var i = 0; i < rawTxtForecasts.length; i += 2) {
+    fullForecasts.push({
+      ...simpleforecasts[i / 2],
+      dayText: rawTxtForecasts[i],
+      nightText: rawTxtForecasts[i + 1]
+    })
+  }
+  console.log(fullForecasts)
+  return fullForecasts
 }
 
 export const fetchWeather = (zipCode) => {
