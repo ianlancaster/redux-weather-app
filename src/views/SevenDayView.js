@@ -18,8 +18,6 @@ class SevenDayView extends Component {
   }
   render () {
     const { resetLocation, forecasts } = this.props
-    console.log('forecasts in render', forecasts)
-
     return (
       <div>
         <header>
