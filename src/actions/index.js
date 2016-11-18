@@ -46,7 +46,6 @@ const structureForecasts = (json) => {
       nightText: rawTxtForecasts[i + 1]
     })
   }
-  console.log(fullForecasts)
   return fullForecasts
 }
 

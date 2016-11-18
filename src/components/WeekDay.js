@@ -1,11 +1,13 @@
 import React, { PropTypes } from 'react'
+import { camelCase } from 'lodash'
 
 const WeekDay = ({ forecast }) => {
-  console.log(forecast)
   const { day, conditions, high, low, humidity, percipitation, wind, icon, nightText, dayText } = forecast
+  const backgroundImage = camelCase(conditions)
+  console.log(backgroundImage)
 
   return (
-    <div className='weekday-card'>
+    <div className={`weekday-card ${backgroundImage}`}>
       <p>{day}</p>
       <p>Conditions: {conditions}</p>
       <img src={icon} />
