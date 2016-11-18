@@ -28,6 +28,9 @@ const app = (state = initialState, action) => {
         ...state,
         forecasts: [action.forecasts],
         zipCode: [action.zipCode],
+        displayLocation: action.displayLocation,
+        alerts: action.alerts,
+        response: action.response,
         __persist: state => {
           const { zipCode, logInView, oneDayView, sevenDayView } = state
           return {

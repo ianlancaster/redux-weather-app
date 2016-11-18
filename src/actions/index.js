@@ -18,16 +18,20 @@ export const receiveWeather = (zipCode, json) => {
   return {
     type: 'RECEIVE_WEATHER',
     forecasts: structureForecasts(json),
+    displayLocation: json.current_observation.display_location.full,
+    alerts: json.alerts,
+    response: json.response,
     zipCode
   }
 }
 
 const structureForecasts = (json) => {
+  console.log(json)
   let simpleforecasts = dropRight(json.forecast.simpleforecast.forecastday, 3)
   simpleforecasts = simpleforecasts.map((f) => {
     return {
       conditions: f.conditions,
-      day: `${f.date.weekday} ${f.date.monthname} ${f.date.day}`,
+      day: `${f.date.weekday_short} ${f.date.monthname_short} ${f.date.day}`,
       humidity: f.avehumidity,
       wind: f.avewind.mph,
       high: f.high.fahrenheit,
@@ -52,7 +56,7 @@ const structureForecasts = (json) => {
 export const fetchWeather = (zipCode) => {
   return dispatch => {
     dispatch(requestWeather())
-    return fetch(`http://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/q/${zipCode}.json`)
+    return fetch(`http://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/alerts/conditions/q/${zipCode}.json`)
       .then(response => response.json())
       .then(json =>
 

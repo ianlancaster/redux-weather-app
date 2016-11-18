@@ -1,5 +1,5 @@
-@import 'base';
 @import '~normalize.css/normalize';
+@import 'base';
 
 // Some best-practice CSS that's useful for most apps
 // Just remove them if they're not what you want
@@ -18,45 +18,4 @@ body {
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-.weekday-card {
-  border: solid 1px;
-  flex: 1 1 0;
-  text-align: center;
-  height: 80vh;
-
-}
-
-.clear {
-  background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.50),
-      rgba(255, 255, 255, 0.50)
-    ),
-    url(./assets/clear.jpg);
-}
-
-.chanceOfRain {
-  background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.50),
-      rgba(255, 255, 255, 0.50)
-    ),
-    url(./assets/chance-of-rain.jpg);
-}
-
-.partlyCloudy {
-  background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.50),
-      rgba(255, 255, 255, 0.50)
-    ),
-    url(./assets/partly-cloudy.jpg);
-}
-
-
-
-#seven-day-forecast {
-    display: flex;
 }

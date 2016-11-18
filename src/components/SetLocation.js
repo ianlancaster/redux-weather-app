@@ -16,7 +16,7 @@ let SetLocation = ({ setLocation, fetchWeather }) => {
           input.value = ''
         }}
       >
-        <input ref={node => { input = node }} placeholder='Enter Zip Code' />
+        <input type='text' ref={node => { input = node }} placeholder='Enter Zip Code or City, ST' />
         <button type='submit' > Check Forecast </button>
       </form>
     </div>

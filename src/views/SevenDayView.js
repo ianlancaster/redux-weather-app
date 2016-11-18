@@ -9,7 +9,8 @@ class SevenDayView extends Component {
     resetLocation: PropTypes.func.isRequired,
     fetchWeather: PropTypes.func,
     forecasts: PropTypes.array,
-    zipCode: PropTypes.array
+    zipCode: PropTypes.array,
+    displayLocation: PropTypes.string
   }
 
   componentWillMount () {
@@ -17,11 +18,11 @@ class SevenDayView extends Component {
     fetchWeather(zipCode)
   }
   render () {
-    const { resetLocation, forecasts } = this.props
+    const { resetLocation, forecasts, displayLocation } = this.props
     return (
       <div>
         <header>
-          <h2>Seven Day Forecast</h2>
+          <h2>Wundrly | Seven Day Forecast for {displayLocation}</h2>
           <Button onClick={resetLocation} text='New Location' />
         </header>
         <main id='seven-day-forecast'>
@@ -33,10 +34,13 @@ class SevenDayView extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { forecasts, zipCode } = state.app
+  const { forecasts, zipCode, displayLocation, alerts, response } = state.app
   return {
     forecasts,
-    zipCode
+    zipCode,
+    displayLocation,
+    alerts,
+    response
   }
 }
 

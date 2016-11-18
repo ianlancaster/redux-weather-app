@@ -4,20 +4,24 @@ import { camelCase } from 'lodash'
 const WeekDay = ({ forecast }) => {
   const { day, conditions, high, low, humidity, percipitation, wind, icon, nightText, dayText } = forecast
   const backgroundImage = camelCase(conditions)
-  console.log(backgroundImage)
 
   return (
     <div className={`weekday-card ${backgroundImage}`}>
-      <p>{day}</p>
-      <p>Conditions: {conditions}</p>
-      <img src={icon} />
+      <h3>{day}</h3>
+      <section className='conditions'>
+        <p><b>Conditions:</b></p>
+        <img src={icon} />
+        <p>{conditions}</p>
+      </section>
       <p><b>High:</b> {high}</p>
-      <p>Low: {low}</p>
-      <p>Humidity: {humidity}</p>
-      <p>Percepitation: {percipitation}</p>
-      <p>Wind: {wind}</p>
-      <p>Day Forecast: {dayText.fcttext}</p>
-      <p>Day Forecast: {nightText.fcttext}</p>
+      <p><b>Low:</b> {low}</p>
+      <p><b>Humidity:</b> {humidity}</p>
+      <p><b>Percepitation:</b> {percipitation}</p>
+      <p><b>Wind:</b> {wind}</p>
+      <p><b>Day Forecast:</b></p>
+      <p>{dayText.fcttext}</p>
+      <p><b>Day Forecast:</b></p>
+      <p> {nightText.fcttext}</p>
     </div>
   )
 }

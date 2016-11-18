@@ -10,7 +10,7 @@ class LogInView extends Component {
 
   render () {
     return (
-      <div>
+      <div id='login-section'>
         <h1>Welcome to Wundrly</h1>
         <h3>Where would you like to check the weather forecast?</h3>
         <SetLocation />

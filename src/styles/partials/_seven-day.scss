@@ -1,0 +1,61 @@
+.weekday-card {
+  flex: 1 1 0;
+  text-align: center;
+  height: 92vh;
+  padding: 10px;
+  overflow: auto;
+
+  h3 {
+    color: black;
+    text-shadow: none;
+    padding: 20px 0 20px 0;
+  }
+
+  p {
+    padding: 10px 0 10px 0;
+  }
+}
+
+.weekday-card.clear {
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.50),
+      rgba(255, 255, 255, 0.50)
+    ),
+    url(./assets/clear.jpg);
+}
+
+.weekday-card.chanceOfRain {
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.50),
+      rgba(255, 255, 255, 0.50)
+    ),
+    url(./assets/chance-of-rain.jpg);
+}
+
+.weekday-card.partlyCloudy {
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.50),
+      rgba(255, 255, 255, 0.50)
+    ),
+    url(./assets/partly-cloudy.jpg);
+}
+
+.weekday-card.rain {
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.50),
+      rgba(255, 255, 255, 0.50)
+    ),
+    url(./assets/rain.jpg);
+}
+
+.conditions {
+  padding: 20px 0 20px 0;
+}
+
+#seven-day-forecast {
+    display: flex;
+}
