@@ -22,7 +22,7 @@ class SevenDayView extends Component {
           <h2>Seven Day Forecast</h2>
           <Button onClick={resetLocation} text='New Location' />
         </header>
-        <main>
+        <main id='seven-day-forecast'>
           {forecasts && (forecasts[0].map(f => <WeekDay forecast={f} key={f.day} />))}
         </main>
       </div>

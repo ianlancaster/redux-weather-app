@@ -5,11 +5,11 @@ const WeekDay = ({ forecast }) => {
   const { day, conditions, high, low, humidity, percipitation, wind, icon, nightText, dayText } = forecast
 
   return (
-    <div>
+    <div className='weekday-card'>
       <p>{day}</p>
       <p>Conditions: {conditions}</p>
       <img src={icon} />
-      <p>High: {high}</p>
+      <p><b>High:</b> {high}</p>
       <p>Low: {low}</p>
       <p>Humidity: {humidity}</p>
       <p>Percepitation: {percipitation}</p>
