@@ -10,7 +10,7 @@ const WeekDay = ({ forecast }) => {
       <h3>{day}</h3>
       <section className='conditions'>
         <p><b>Conditions:</b></p>
-        <img src={icon} />
+        <img src={icon} alt={`${conditions} icon`} />
         <p>{conditions}</p>
       </section>
       <p><b>High:</b> {high}</p>

@@ -16,7 +16,12 @@ let SetLocation = ({ setLocation, fetchWeather }) => {
           input.value = ''
         }}
       >
-        <input type='text' ref={node => { input = node }} placeholder='Enter Zip Code or City, ST' />
+        <input
+          type='text'
+          ref={node => { input = node }}
+          placeholder='Enter Zip Code or City, ST'
+          aria-label='location-input'
+        />
         <button type='submit' > Check Forecast </button>
       </form>
     </div>
