@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Button from '../components/Button'
+import WeekDay from '../components/WeekDay'
 import { resetLocation, fetchWeather } from '../actions/index'
 
 class SevenDayView extends Component {
@@ -17,9 +18,13 @@ class SevenDayView extends Component {
 
     return (
       <div>
-        <h3>{Date.now()}</h3>
-        {forecasts && (<h3>{forecasts[0][0].conditions}</h3>)}
-        <Button onClick={resetLocation} text='New Location' />
+        <header>
+          <h2>Seven Day Forecast</h2>
+          <Button onClick={resetLocation} text='New Location' />
+        </header>
+        <main>
+          {forecasts && (forecasts[0].map(f => <WeekDay forecast={f} key={f.day} />))}
+        </main>
       </div>
     )
   }

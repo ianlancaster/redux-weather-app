@@ -27,7 +27,7 @@ const structureForecasts = (json) => {
   simpleforecasts = simpleforecasts.map((f) => {
     return {
       conditions: f.conditions,
-      dayText: `${f.date.weekday} ${f.date.monthname} ${f.date.day}`,
+      day: `${f.date.weekday} ${f.date.monthname} ${f.date.day}`,
       humidity: f.avehumidity,
       wind: f.avewind.mph,
       high: f.high.fahrenheit,
