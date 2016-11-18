@@ -4,13 +4,14 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import persistState from 'redux-localstorage'
+import persistSlicer from 'redux-localstorage-slicer'
 import reducer from './reducers'
 import App from './contatiners/App'
 import './styles/core.scss'
 
 const enhancer = compose(
   /* [middlewares] */
-  persistState(/*paths, config*/),
+  persistState(null, { slicer: persistSlicer() }), /*paths, config*/
 )
 
 const middleware = [ thunk ]

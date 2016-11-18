@@ -12,6 +12,10 @@ class SevenDayView extends Component {
     zipCode: PropTypes.array
   }
 
+  componentWillMount () {
+    const { fetchWeather, zipCode } = this.props
+    fetchWeather(zipCode)
+  }
   render () {
     const { resetLocation, forecasts } = this.props
     console.log('forecasts in render', forecasts)
