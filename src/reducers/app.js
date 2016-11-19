@@ -42,6 +42,12 @@ const app = (state = initialState, action) => {
         }
       }
 
+    case 'RECEIVE_ERROR':
+      return {
+        ...state,
+        error: action.error
+      }
+
     default:
       return state
   }

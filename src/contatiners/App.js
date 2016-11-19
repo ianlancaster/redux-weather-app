@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import AppComponent from '../components/App'
 
 const mapStateToProps = (state) => {
+  console.log('state', state)
   const { logInView, oneDayView, sevenDayView } = state.app
   return {
     logInView,

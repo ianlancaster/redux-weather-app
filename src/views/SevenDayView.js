@@ -15,7 +15,7 @@ class SevenDayView extends Component {
 
   componentWillMount () {
     const { fetchWeather, zipCode } = this.props
-    fetchWeather(zipCode)
+    zipCode && (fetchWeather(zipCode))
   }
   render () {
     const { resetLocation, forecasts, displayLocation } = this.props

@@ -25,8 +25,14 @@ export const receiveWeather = (zipCode, json) => {
   }
 }
 
+export const receiveError = (zipCode, json) => {
+  return {
+    type: 'RECEIVE_WEATHER',
+    error: json.error
+  }
+}
+
 const structureForecasts = (json) => {
-  console.log(json)
   let simpleforecasts = dropRight(json.forecast.simpleforecast.forecastday, 3)
   simpleforecasts = simpleforecasts.map((f) => {
     return {
@@ -58,12 +64,10 @@ export const fetchWeather = (zipCode) => {
     dispatch(requestWeather())
     return fetch(`http://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/alerts/conditions/q/${zipCode}.json`)
       .then(response => response.json())
-      .then(json =>
-
-        // We can dispatch many times!
-        // Here, we update the app state with the results of the API call.
-
-        dispatch(receiveWeather(zipCode, json))
-      )
+      .then(json => {
+        console.log('json ', json.response.error)
+        json.response.error ? dispatch(receiveError(zipCode, json))
+                            : dispatch(receiveWeather(zipCode, json))
+      })
   }
 }
