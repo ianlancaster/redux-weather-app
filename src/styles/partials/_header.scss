@@ -12,4 +12,21 @@ header {
     button {
       height: 100%;
     }
+
+    @include mobile {
+      flex-direction: column;
+      text-align: center;
+      padding-left: 0px;
+      height: auto;
+      min-height: 80px;
+
+      h2 {
+        font-size: 34px;
+      }
+
+      button {
+        height: 40px;
+        margin: 10px;
+      }
+    }
 }

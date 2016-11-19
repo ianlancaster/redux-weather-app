@@ -1,3 +1,11 @@
+#seven-day-forecast {
+  display: flex;
+
+  @include mobile {
+    display: inherit;
+  }
+}
+
 .weekday-card {
   flex: 1 1 0;
   text-align: center;
@@ -9,53 +17,44 @@
     color: black;
     text-shadow: none;
     padding: 20px 0 20px 0;
+    font-weight: 700;
   }
 
   p {
     padding: 10px 0 10px 0;
   }
+
+  @include mobile {
+    padding-bottom: 50px;
+    height: 100%;
+  }
 }
 
 .weekday-card.clear {
   background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.50),
-      rgba(255, 255, 255, 0.50)
-    ),
+    $whiteOverlay,
     url(./assets/clear.jpg);
 }
 
 .weekday-card.chanceOfRain {
   background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.50),
-      rgba(255, 255, 255, 0.50)
-    ),
+    $whiteOverlay,
     url(./assets/chance-of-rain.jpg);
 }
 
+
 .weekday-card.partlyCloudy {
   background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.50),
-      rgba(255, 255, 255, 0.50)
-    ),
+    $whiteOverlay,
     url(./assets/partly-cloudy.jpg);
 }
 
 .weekday-card.rain {
   background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.50),
-      rgba(255, 255, 255, 0.50)
-    ),
+    $whiteOverlay,
     url(./assets/rain.jpg);
 }
 
 .conditions {
   padding: 20px 0 20px 0;
-}
-
-#seven-day-forecast {
-    display: flex;
 }
