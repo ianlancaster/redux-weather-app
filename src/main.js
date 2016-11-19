@@ -11,7 +11,7 @@ import './styles/core.scss'
 
 const enhancer = compose(
   /* [middlewares] */
-  persistState(null, { slicer: persistSlicer() }), /*paths, config*/
+  persistState(null, { slicer: persistSlicer() }),
 )
 
 const middleware = [ thunk ]

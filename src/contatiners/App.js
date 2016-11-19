@@ -2,7 +2,6 @@ import { connect } from 'react-redux'
 import AppComponent from '../components/App'
 
 const mapStateToProps = (state) => {
-  console.log('state', state)
   const { logInView, oneDayView, sevenDayView } = state.app
   return {
     logInView,
@@ -11,10 +10,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = ({
-
-})
-
-const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent)
+const App = connect(mapStateToProps)(AppComponent)
 
 export default App

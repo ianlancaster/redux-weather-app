@@ -20,7 +20,7 @@ const WeekDay = ({ forecast }) => {
       <p><b>Wind:</b> {wind}</p>
       <p><b>Day Forecast:</b></p>
       <p>{dayText.fcttext}</p>
-      <p><b>Day Forecast:</b></p>
+      <p><b>Night Forecast:</b></p>
       <p> {nightText.fcttext}</p>
     </div>
   )

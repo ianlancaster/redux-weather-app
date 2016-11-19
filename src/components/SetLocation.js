@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-let SetLocation = ({ setLocation, fetchWeather }) => {
+let SetLocation = ({ fetchWeather }) => {
   let input
 
   return (
@@ -11,7 +11,6 @@ let SetLocation = ({ setLocation, fetchWeather }) => {
           if (!input.value.trim()) {
             return
           }
-          // setLocation(input.value)
           fetchWeather(input.value)
           input.value = ''
         }}
@@ -29,7 +28,6 @@ let SetLocation = ({ setLocation, fetchWeather }) => {
 }
 
 SetLocation.propTypes = {
-  setLocation: PropTypes.func.isRequired,
   fetchWeather: PropTypes.func.isRequired
 }
 

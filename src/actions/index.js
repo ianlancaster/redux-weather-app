@@ -1,11 +1,6 @@
 import fetch from 'isomorphic-fetch'
 import { dropRight, foreIn, zip, flatten } from 'lodash'
 
-export const setLocation = zipCode => ({
-  type: 'SET_LOCATION',
-  zipCode
-})
-
 export const resetLocation = () => ({
   type: 'RESET_LOCATION'
 })
@@ -25,10 +20,10 @@ export const receiveWeather = (zipCode, json) => {
   }
 }
 
-export const receiveError = (zipCode, json) => {
+export const receiveError = (json) => {
   return {
     type: 'RECEIVE_ERROR',
-    error: json.error
+    error: json.response.error
   }
 }
 
@@ -65,8 +60,7 @@ export const fetchWeather = (zipCode) => {
     return fetch(`http://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/alerts/conditions/q/${zipCode}.json`)
       .then(response => response.json())
       .then(json => {
-        console.log('json ', json.response.error)
-        json.response.error ? dispatch(receiveError(zipCode, json))
+        json.response.error ? dispatch(receiveError(json))
                             : dispatch(receiveWeather(zipCode, json))
       })
   }

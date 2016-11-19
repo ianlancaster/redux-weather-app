@@ -9,13 +9,6 @@ const app = (state = initialState, action) => {
     case 'RESET_LOCATION':
       return initialState
 
-    case 'SET_LOCATION':
-      return {
-        logInView: false,
-        oneDayView: false,
-        sevenDayView: true
-      }
-
     case 'REQUEST_WEATHER':
       return {
         ...state,
@@ -44,7 +37,6 @@ const app = (state = initialState, action) => {
       }
 
     case 'RECEIVE_ERROR':
-      console.log('ping')
       return {
         ...initialState,
         error: action.error
