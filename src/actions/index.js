@@ -27,7 +27,7 @@ export const receiveWeather = (zipCode, json) => {
 
 export const receiveError = (zipCode, json) => {
   return {
-    type: 'RECEIVE_WEATHER',
+    type: 'RECEIVE_ERROR',
     error: json.error
   }
 }

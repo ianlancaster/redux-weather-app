@@ -11,7 +11,7 @@ let SetLocation = ({ setLocation, fetchWeather }) => {
           if (!input.value.trim()) {
             return
           }
-          setLocation(input.value)
+          // setLocation(input.value)
           fetchWeather(input.value)
           input.value = ''
         }}

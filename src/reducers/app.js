@@ -16,16 +16,17 @@ const app = (state = initialState, action) => {
         sevenDayView: true
       }
 
-    case 'ACTIVATE_SEVENDAYVIEW':
+    case 'REQUEST_WEATHER':
       return {
-        logInView: false,
-        oneDayView: false,
-        sevenDayView: true
+        ...state,
+        loading: true
       }
 
     case 'RECEIVE_WEATHER':
       return {
-        ...state,
+        logInView: false,
+        oneDayView: false,
+        sevenDayView: true,
         forecasts: [action.forecasts],
         zipCode: [action.zipCode],
         displayLocation: action.displayLocation,
@@ -43,8 +44,9 @@ const app = (state = initialState, action) => {
       }
 
     case 'RECEIVE_ERROR':
+      console.log('ping')
       return {
-        ...state,
+        ...initialState,
         error: action.error
       }
 
