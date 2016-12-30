@@ -34,12 +34,14 @@
   background:
     $whiteOverlay,
     url(./assets/clear.jpg);
+    @include paralax
 }
 
 .weekday-card.chanceOfRain {
   background:
     $whiteOverlay,
     url(./assets/chance-of-rain.jpg);
+    @include paralax
 }
 
 
@@ -47,12 +49,28 @@
   background:
     $whiteOverlay,
     url(./assets/partly-cloudy.jpg);
+    @include paralax
+}
+
+.weekday-card.mostlyCloudy {
+  background:
+    $whiteOverlay,
+    url(./assets/mostly-cloudy.jpg);
+    @include paralax
 }
 
 .weekday-card.rain {
   background:
     $whiteOverlay,
     url(./assets/rain.jpg);
+    @include paralax
+}
+
+.weekday-card.snowShowers {
+  background:
+    $whiteOverlay,
+    url(./assets/snow-showers.jpg);
+    @include paralax
 }
 
 .conditions {
