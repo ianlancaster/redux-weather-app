@@ -20,10 +20,10 @@ export const receiveWeather = (zipCode, json) => {
   }
 }
 
-export const receiveError = (json) => {
+export const receiveError = (err) => {
   return {
     type: 'RECEIVE_ERROR',
-    error: json.response.error
+    error: err
   }
 }
 
@@ -60,6 +60,6 @@ export const fetchWeather = (zipCode) => {
     return fetch(`http://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/alerts/conditions/q/${zipCode}.json`)
       .then(response => response.json())
       .then(json => dispatch(receiveWeather(zipCode, json)))
-      .catch(err => console.log(err))
+      .catch(err => dispatch(receiveError(err)))
   }
 }

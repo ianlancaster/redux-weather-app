@@ -17,7 +17,9 @@ class LogInView extends Component {
         <h1>Welcome to Wundrly</h1>
         <h3>Where would you like to check the weather forecast?</h3>
         <SetLocation />
-        { error && (<h3>{error.description}</h3>)}
+        { error && (<p className='error'>
+          There was an issue looking up that location.
+          Did you include the state abbreviation?</p>)}
       </div>
     )
   }
