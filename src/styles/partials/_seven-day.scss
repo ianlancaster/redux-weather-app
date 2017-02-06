@@ -73,6 +73,41 @@
     @include paralax
 }
 
+.weekday-card.chanceOfSnow {
+  background:
+    $whiteOverlay,
+    url(./assets/chance-of-snow.jpg);
+    @include paralax
+}
+
+.weekday-card.overcast {
+  background:
+    $whiteOverlay,
+    url(./assets/overcast.jpg);
+    @include paralax
+}
+
+.weekday-card.thunderstorm {
+  background:
+    $whiteOverlay,
+    url(./assets/thunderstorm.jpg);
+    @include paralax
+}
+
+.weekday-card.thunderstorms {
+  background:
+    $whiteOverlay,
+    url(./assets/thunderstorm.jpg);
+    @include paralax
+}
+
+.weekday-card.snow {
+  background:
+    $whiteOverlay,
+    url(./assets/snow.jpg);
+    @include paralax
+}
+
 .conditions {
   padding: 20px 0 20px 0;
 }
