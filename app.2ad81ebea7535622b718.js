@@ -37023,7 +37023,7 @@ webpackJsonp([0],[
 	var fetchWeather = exports.fetchWeather = function fetchWeather(zipCode) {
 	  return function (dispatch) {
 	    dispatch(requestWeather());
-	    return (0, _isomorphicFetch2.default)('http://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/alerts/conditions/q/' + zipCode + '.json').then(function (response) {
+	    return (0, _isomorphicFetch2.default)('https://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/alerts/conditions/q/' + zipCode + '.json').then(function (response) {
 	      return response.json();
 	    }).then(function (json) {
 	      return dispatch(receiveWeather(zipCode, json));
@@ -39662,4 +39662,4 @@ webpackJsonp([0],[
 
 /***/ }
 ]);
-//# sourceMappingURL=app.251d02a7293348879554.js.map
+//# sourceMappingURL=app.2ad81ebea7535622b718.js.map
