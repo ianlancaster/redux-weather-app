@@ -57,7 +57,7 @@ const structureForecasts = (json) => {
 export const fetchWeather = (zipCode) => {
   return dispatch => {
     dispatch(requestWeather())
-    return fetch(`http://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/alerts/conditions/q/${zipCode}.json`)
+    return fetch(`https://api.wunderground.com/api/219cb0f230ea16b0/forecast10day/alerts/conditions/q/${zipCode}.json`)
       .then(response => response.json())
       .then(json => dispatch(receiveWeather(zipCode, json)))
       .catch(err => dispatch(receiveError(err)))
