@@ -2,7 +2,7 @@
 
 Wundrly is a sleek and simple application that shows the seven day weather forecast for a zip code or city, state. It is powered by the Weather Underground API and was developed using React and Redux. The site is fully responsive and features some neat parallax effects. This was my first stab at a redux application after two full day of wading through documentation. Visit a live deployment of the application here: [Wundrly Weather App](https://ianlancaster.github.io/redux-weather-app/)
 
-![Redux Weather App Gif](https://media.giphy.com/media/l0ExgTNOletlq56bC/giphy.gif)
+![Redux Weather App Gif](https://media.giphy.com/media/l0Ex5VfOpL1VsamLS/giphy.gif)
 
 ## Installation
 
