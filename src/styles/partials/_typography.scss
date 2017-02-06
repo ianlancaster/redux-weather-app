@@ -7,7 +7,7 @@ h1 {
   text-shadow: 2px 2px 4px #000000;
 }
 
-h2 { 
+h2 {
   font-family: 'Kreon', serif;
   font-size: 44px;
   color: black;
@@ -23,9 +23,13 @@ h3 {
 
 p {
   font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 p b {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
+  // font-family: 'Open Sans', sans-serif;
+  font-family: 'Kreon', serif;
+  font-size: 18px;
+  // font-weight: 700;
 }

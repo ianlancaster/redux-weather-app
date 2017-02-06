@@ -16,7 +16,7 @@ header {
     @include mobile {
       flex-direction: column;
       text-align: center;
-      padding-left: 0px;
+      padding: 10px;
       height: auto;
       min-height: 80px;
 

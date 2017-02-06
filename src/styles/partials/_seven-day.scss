@@ -4,6 +4,10 @@
   @include mobile {
     display: inherit;
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .weekday-card {
@@ -11,7 +15,7 @@
   text-align: center;
   height: 92vh;
   padding: 10px;
-  overflow: auto;
+  overflow-y: auto;
 
   h3 {
     color: black;
@@ -25,8 +29,15 @@
   }
 
   @include mobile {
-    padding-bottom: 50px;
+    padding: 50px 10px;
     height: 100%;
+
+    .main-content {
+      max-width: 500px;
+      margin: auto;
+      background: $whiteOverlay;
+      padding: 10px;
+    }
   }
 }
 
